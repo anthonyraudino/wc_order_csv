@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: WooCommerce Order CSV Export
- * Plugin URI:  https://yourwebsite.com/
+ * Plugin URI:  https://anthonyraudino.com/
  * Description: Allows customers to download their WooCommerce orders as a CSV file.
  * Version:     1.0.0
- * Author:      Your Name
- * Author URI:  https://yourwebsite.com/
+ * Author:      Anthony Raudino
+ * Author URI:  https://anthonyraudino.com/
  * License:     GPL2
  * Text Domain: wc-order-csv-export
  */
