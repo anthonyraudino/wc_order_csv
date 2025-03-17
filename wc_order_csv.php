@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Order CSV Export
  * Plugin URI:  https://anthonyraudino.com/
  * Description: Allows customers and shop managers to download their WooCommerce orders as a CSV file.
- * Version:     1.2.0
+ * Version:     1.2.1
  * Author:      Anthony Raudino
  * Author URI:  https://anthonyraudino.com/
  * License:     GPL2
@@ -157,8 +157,9 @@ add_action('woocommerce_admin_order_actions_end', [$this, 'add_admin_order_page_
 public function add_admin_order_page_download_button($order) {
     if ( current_user_can('manage_woocommerce') ) {
         $order_id = $order->get_id();
+		$icon_url = plugin_dir_url( __FILE__ ) . 'assets/file-csv-solid.svg';
         $csv_url  = wp_nonce_url( admin_url('admin.php?action=download_order_csv&post=' . $order_id), 'download_order_csv_' . $order_id );
-        $svg_icon = '<img style="width: 1.2em !important; height: 1.2em !important; margin: 0 auto; margin-top: 0.5em; fill: currentColor;" src="https://babwholesale.com/wp-content/uploads/2025/03/file-csv-solid.svg" class="csvicon" />';
+        $svg_icon = '<img style="width: 1.2em !important; height: 1.2em !important; margin: 0 auto; margin-top: 0.5em; fill: currentColor;" src="' . esc_url( $icon_url ) . '" class="csvicon" />';
         echo '<a href="' . esc_url( $csv_url ) . '" class="button">' . $svg_icon . ' ' . __( '', 'wc-order-csv-export' ) . '</a>';
     }
 }
